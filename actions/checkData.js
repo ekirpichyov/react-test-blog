@@ -1,7 +1,5 @@
 import json from "../data/data.json"
 
-//проверка наличия данных в localStorage
-
 const checkData = () => {
     if (localStorage.length === 0) {
         json.map(element => localStorage.setItem(element.key, JSON.stringify(element)))
