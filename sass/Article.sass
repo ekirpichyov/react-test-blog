@@ -1,0 +1,71 @@
+main
+    position: relative
+    article.open
+        height: 100%
+        border: 0
+        .head
+            font-size: 36px
+            font-weight: 700
+            color: #424242
+            cursor: default
+            margin: 20px 0
+        .content
+            font-size: 16px
+            overflow: hidden
+    .comments
+        margin-top: 25px
+        position: relative
+        .comments-count
+            top: -25px
+        .comment
+            background: #ffffff
+            margin: 10px 0
+            border-radius: 10px
+            padding: 10px
+            box-shadow: 0 0 10px rgba(0,0,0,.1)
+            .remove-comment
+                position: sticky
+                float: right
+                font-size: 10px
+                width: 20px
+                height: 20px
+            .author
+                color: #0D47A1
+            .content
+                padding-left: 15px
+        #add-comment
+            textarea
+                resize: none
+                font-size: 14px
+                border-radius: 5px
+                padding: 5px
+                border: 1px solid #BDBDBD
+                display: block
+                margin: 10px 0
+            input
+                color: #ffffff
+                width: 100px
+                height: 30px
+                border-radius: 10px
+                background: #4CAF50
+            input:disabled
+                background: #E0E0E0
+    button
+        color: #ffffff
+        width: 30px
+        height: 30px
+        border-radius: 5px
+        font-size: 20px
+        position: absolute
+        background: #f44336
+        top: -40px
+        right: 0
+    button.close
+        left: 0
+        background: #B0BEC5
+        padding-top: 1px
+        width: 100px
+    button.edit
+        right: 40px
+        background: #B0BEC5
+    
