@@ -1,13 +1,13 @@
 {
   "main.css": "/react-test-blog/static/css/main.1303baaf.chunk.css",
-  "main.js": "/react-test-blog/static/js/main.cae982f2.chunk.js",
-  "main.js.map": "/react-test-blog/static/js/main.cae982f2.chunk.js.map",
+  "main.js": "/react-test-blog/static/js/main.6bfd9e6b.chunk.js",
+  "main.js.map": "/react-test-blog/static/js/main.6bfd9e6b.chunk.js.map",
   "runtime~main.js": "/react-test-blog/static/js/runtime~main.f5fc3608.js",
   "runtime~main.js.map": "/react-test-blog/static/js/runtime~main.f5fc3608.js.map",
-  "static/js/2.c9d8d7cb.chunk.js": "/react-test-blog/static/js/2.c9d8d7cb.chunk.js",
-  "static/js/2.c9d8d7cb.chunk.js.map": "/react-test-blog/static/js/2.c9d8d7cb.chunk.js.map",
+  "static/js/2.69b7eba1.chunk.js": "/react-test-blog/static/js/2.69b7eba1.chunk.js",
+  "static/js/2.69b7eba1.chunk.js.map": "/react-test-blog/static/js/2.69b7eba1.chunk.js.map",
   "index.html": "/react-test-blog/index.html",
-  "precache-manifest.bc93dcbdf104c691eaf9022540fb287a.js": "/react-test-blog/precache-manifest.bc93dcbdf104c691eaf9022540fb287a.js",
+  "precache-manifest.bcc49ea7a1c719f0e4c3f1efcd4dcb48.js": "/react-test-blog/precache-manifest.bcc49ea7a1c719f0e4c3f1efcd4dcb48.js",
   "service-worker.js": "/react-test-blog/service-worker.js",
   "static/css/main.1303baaf.chunk.css.map": "/react-test-blog/static/css/main.1303baaf.chunk.css.map"
 }
