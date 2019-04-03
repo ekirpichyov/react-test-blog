@@ -28,7 +28,7 @@ const HandleArticle = (props) => {
 
     return (
         <div className="popup">
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit}>
                 <button onClick={props.close}><i className="fas fa-arrow-left"></i> Назад</button>
                 <textarea   name="head"
                             cols="50" 
