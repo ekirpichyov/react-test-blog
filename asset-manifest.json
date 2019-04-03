@@ -1,5 +1,5 @@
 {
-  "main.css": "/react-test-blog/static/css/main.8d508f15.chunk.css",
+  "main.css": "/react-test-blog/static/css/main.ef425dec.chunk.css",
   "main.js": "/react-test-blog/static/js/main.6ec698b1.chunk.js",
   "main.js.map": "/react-test-blog/static/js/main.6ec698b1.chunk.js.map",
   "runtime~main.js": "/react-test-blog/static/js/runtime~main.f5fc3608.js",
@@ -7,7 +7,7 @@
   "static/js/2.23e166c6.chunk.js": "/react-test-blog/static/js/2.23e166c6.chunk.js",
   "static/js/2.23e166c6.chunk.js.map": "/react-test-blog/static/js/2.23e166c6.chunk.js.map",
   "index.html": "/react-test-blog/index.html",
-  "precache-manifest.bb14d00fcecbe806bb558161d524aa64.js": "/react-test-blog/precache-manifest.bb14d00fcecbe806bb558161d524aa64.js",
+  "precache-manifest.ce15b6b372ea9f82b574d003f41b2e7a.js": "/react-test-blog/precache-manifest.ce15b6b372ea9f82b574d003f41b2e7a.js",
   "service-worker.js": "/react-test-blog/service-worker.js",
-  "static/css/main.8d508f15.chunk.css.map": "/react-test-blog/static/css/main.8d508f15.chunk.css.map"
+  "static/css/main.ef425dec.chunk.css.map": "/react-test-blog/static/css/main.ef425dec.chunk.css.map"
 }
