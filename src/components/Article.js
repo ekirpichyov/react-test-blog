@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import "./Article.css"
 import HandleArticle from "./HandleArticle"
 import {validateComment} from "../actions/validate.js"
@@ -78,6 +78,7 @@ const Article = (props) => {
                             onChange={handleChange}>
                 </textarea>
                 <input      type="submit" 
+                            value="Отправить"
                             name="submit"
                             placeholder="Заголовок" disabled={disabled}>
                 </input>

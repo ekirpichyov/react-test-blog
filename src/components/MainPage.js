@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Article from "./Article"
 import ArticleList from "./ArticleList"
 import HandleArticle from "./HandleArticle"
