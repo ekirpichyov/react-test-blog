@@ -7,17 +7,10 @@ const Article = (props) => {
     const data = props.data.data
     const key = props.data.key
     const comments = data.comments
-    const [commentKeys, setCommentKeys] = useState([])
-    const [edit, setEdit] = useState(false)
+    const [editPost, setEditPost] = useState(false)
     const [disabled, setDisabled] = useState(true)
     const [author, setAuthor] = useState("")
     const [text, setText] = useState("")
-
-    useEffect(() => {
-        const arrKey = [] 
-        comments.forEach(item => arrKey.push(item.key))
-        setCommentKeys(arrKey)
-    }, [comments.length])
 
     const handleChange = (e) => {
         const target = e.target
@@ -43,8 +36,6 @@ const Article = (props) => {
     const removeComment = (e) => {
         const target = e.target
         const value = target.value
-        console.log(value)
-        
         const newComments = comments.filter(el => el.key !== value)
         props.publicate(data.head, data.brief, data.content, key, newComments)
     }
@@ -53,11 +44,13 @@ const Article = (props) => {
         <>
         <button className="close" onClick={() => props.selector(null)}><i className="fas fa-arrow-left"> Назад</i></button>
         <button className="remove" onClick={()=>props.remover(key)}><i className="fas fa-trash-alt"></i></button>
-        <button className="edit" onClick={()=>setEdit(true)}><i className="fas fa-pencil-alt"></i></button>
+        <button className="edit" onClick={()=>setEditPost(true)}><i className="fas fa-pencil-alt"></i></button>
+        
         <article className="open">
             <div className="head">{data.head}</div>
             <div className="content">{data.content}</div>
         </article>
+
         <div className="comments">
             <div className="comments-count">Комментариев: {comments.length}</div>
             {comments.map(item => 
@@ -67,6 +60,7 @@ const Article = (props) => {
                     <div className="content">{item.comment}</div>
                 </div>
             )}
+
             <form id="add-comment" onSubmit={handleSubmitComment}>
                 Добавить комментарий
                 <textarea   name="author"
@@ -89,7 +83,7 @@ const Article = (props) => {
                 </input>
             </form>
         </div>
-        {edit ? <HandleArticle data={data} publicate={props.publicate} close={()=>setEdit(false)} value={key}/>: null}
+        {editPost ? <HandleArticle data={data} publicate={props.publicate} close={()=>setEditPost(false)} value={key}/>: null}
         
         </>
     )
