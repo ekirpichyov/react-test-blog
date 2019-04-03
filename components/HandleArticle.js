@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import "./NewArticle.css"
+import "./HandleArticle.css"
 import {validateArticle} from "../actions/validate.js"
 
 const HandleArticle = (props) => {
@@ -16,6 +16,7 @@ const HandleArticle = (props) => {
         name === "head" ? setHead(target.value) :
         name === "brief" ? setBrief(target.value) :
         setContent(target.value)
+        
         setDisabled(validateArticle(head,brief,content))
     }
 
