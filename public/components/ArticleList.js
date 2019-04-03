@@ -5,21 +5,21 @@ import InfiniteScroll from 'react-infinite-scroller'
 const ArticleList = (props) => {
     const data = props.data
     
-    const [position, setPosition] = useState(5)
-    const [loadPosts, setLoadPosts] = useState(data.slice(0, position))
+    const [loadPostsCount, setLoadPostsCount] = useState(5)
+    const [loadPostsData, setLoadPostsData] = useState(data.slice(0, loadPostsCount))
 
     useEffect(() => {
-        setLoadPosts(data.slice(0, position))
-    }, [data.length, position])
+        setLoadPostsData(data.slice(0, loadPostsCount))
+    }, [data.length, loadPostsCount])
 
     const handleNext = () => {
-        setPosition(position + 5)
+        setLoadPostsCount(loadPostsCount + 5)
     }
 
     const Posts = () => {
         return (
             <>
-            {loadPosts.map(element => 
+            {loadPostsData.map(element => 
                 <article key={element.key}>
                     <div className="head" onClick={()=>{props.selector(element.key)}}>{element.data.head}</div>
                     <div className="comments-count">Комментариев: {element.data.comments.length}</div>
@@ -33,9 +33,9 @@ const ArticleList = (props) => {
     return (
         <InfiniteScroll
             loadMore={handleNext}
-            hasMore={position <= data.length}
+            hasMore={loadPostsCount <= data.length}
         >
-        <Posts/>
+            <Posts/>
         </InfiniteScroll>
     )
 }
