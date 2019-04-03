@@ -9,7 +9,12 @@ const ArticleList = (props) => {
 
     useEffect(() => {
         setScroll(data.slice(0, position))
+        console.log(scroll)
     }, [position])
+
+    const refresh = () => {
+        data = props.data
+    }
     
     return (
         <InfiniteScroll
@@ -19,6 +24,7 @@ const ArticleList = (props) => {
             endMessage={<h4>Конец</h4>}
             loader={<h4>Загрузка...</h4>}
             height={550}
+            refreshFunction={refresh}
         >
         {scroll.map((element, index) => 
             <article key={index}>

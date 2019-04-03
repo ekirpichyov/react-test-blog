@@ -3,7 +3,6 @@ import Article from "./Article"
 import ArticleList from "./ArticleList"
 import HandleArticle from "./HandleArticle"
 import localData from "../actions/checkData"
-import generator from "../actions/keyGenerator"
 import "./MainPage.css"
 
 const MainPage = () => {
@@ -29,7 +28,7 @@ const MainPage = () => {
     }
 
     const handlePublicate = (head, brief, content, editKey, comments) => {
-        const key = editKey ? editKey : generator(keys)
+        const key = editKey ? editKey : Date.now()
         const post = {
         key: key,
         data:{
@@ -53,8 +52,7 @@ const MainPage = () => {
         <main>
             {article !== null ? 
             <Article selector={showArticle} publicate={handlePublicate} remover={handleRemove} data={JSON.parse(localStorage.getItem(article))}/> : 
-            <ArticleList   selector={showArticle}
-                    data={data}/>}
+            <ArticleList   selector={showArticle} data={data}/>}
             {publicate ?  <HandleArticle publicate={handlePublicate} close={()=>setPublicate(false)}/> : null}
            
         </main>
