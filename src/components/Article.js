@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import "./Article.css"
 import HandleArticle from "./HandleArticle"
 import {validateComment} from "../actions/validate.js"
-import generator from "../actions/keyGenerator"
 
 const Article = (props) => {
     const data = props.data.data
@@ -31,7 +30,7 @@ const Article = (props) => {
     const handleSubmitComment = (e) => {
         e.preventDefault()
         const comment = {
-            key: generator(commentKeys),
+            key: Date.now() + [],
             author: author,
             comment: text
         }

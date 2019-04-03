@@ -1,38 +1,41 @@
 import React, {useState, useEffect} from "react"
-import InfiniteScroll from 'react-infinite-scroll-component'
+import InfiniteScroll from 'react-infinite-scroller'
+
 
 const ArticleList = (props) => {
     const data = props.data
     
     const [position, setPosition] = useState(5)
-    const [scroll, setScroll] = useState(data.slice(0, position))
+    const [loadPosts, setLoadPosts] = useState(data.slice(0, position))
 
     useEffect(() => {
-        setScroll(data.slice(0, position))
-        console.log(scroll)
-    }, [position])
+        setLoadPosts(data.slice(0, position))
+    }, [data.length, position])
 
-    const refresh = () => {
-        data = props.data
+    const handleNext = () => {
+        setPosition(position + 5)
     }
-    
+
+    const Posts = () => {
+        return (
+            <>
+            {loadPosts.map(element => 
+                <article key={element.key}>
+                    <div className="head" onClick={()=>{props.selector(element.key)}}>{element.data.head}</div>
+                    <div className="comments-count">Комментариев: {element.data.comments.length}</div>
+                    <div className="brief">{element.data.brief}</div>
+                </article>
+            )}
+            </>
+        )
+    }
+
     return (
         <InfiniteScroll
-            next={()=> setPosition(position + 5)}
-            dataLength={position}
+            loadMore={handleNext}
             hasMore={position <= data.length}
-            endMessage={<h4>Конец</h4>}
-            loader={<h4>Загрузка...</h4>}
-            height={550}
-            refreshFunction={refresh}
         >
-        {scroll.map((element, index) => 
-            <article key={index}>
-                <div className="head" onClick={()=>{props.selector(element.key)}}>{element.data.head}</div>
-                <div className="comments-count">Комментариев: {element.data.comments.length}</div>
-                <div className="brief">{element.data.brief}</div>
-            </article>
-        )}
+        <Posts/>
         </InfiniteScroll>
     )
 }
