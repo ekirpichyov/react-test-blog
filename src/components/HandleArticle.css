@@ -9,7 +9,7 @@
 .popup form {
   position: relative;
   width: 900px;
-  height: 500px;
+  height: 550px;
   margin: 65px auto;
   background: #ffffff;
   padding: 20px;
@@ -32,6 +32,48 @@
   border: 1px solid #757575;
   display: block;
   margin: 10px auto;
+}
+.popup form textarea.error {
+  border: 1px solid #e53935;
+}
+.popup form textarea.valid {
+  border: 1px solid #43A047;
+}
+.popup form textarea#head {
+  height: 20px;
+  width: 450px;
+  margin-bottom: 30px;
+}
+.popup form textarea#brief {
+  height: 70px;
+  width: 450px;
+  margin-bottom: 30px;
+}
+.popup form textarea#content {
+  height: 350px;
+  width: 870px;
+  margin-bottom: 30px;
+}
+.popup form #head-error {
+  position: absolute;
+  left: 270px;
+  color: red;
+  font-size: 12px;
+  top: 65px;
+}
+.popup form #brief-error {
+  position: absolute;
+  left: 270px;
+  color: red;
+  font-size: 12px;
+  top: 175px;
+}
+.popup form #content-error {
+  position: absolute;
+  left: 65px;
+  color: red;
+  font-size: 12px;
+  bottom: 5px;
 }
 .popup form input {
   position: absolute;

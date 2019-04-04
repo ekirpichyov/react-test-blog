@@ -28,30 +28,34 @@ const HandleArticle = (props) => {
 
     return (
         <div className="popup">
-            <button onClick={props.close}><i className="fas fa-arrow-left"></i></button>
             <form onSubmit={handleSubmit}>
-                <textarea   name="head"
+                <button onClick={props.close}><i className="fas fa-arrow-left"></i> Назад</button>
+                <textarea   id="head"
+                            name="head"
                             cols="50" 
                             rows="1"
                             placeholder="Заголовок, 5-50 символов"
                             value={head}
                             onChange={handleChange}>
                 </textarea>
-                <textarea   name="brief" 
+                <textarea   id="brief"
+                            name="brief" 
                             cols="50" 
                             rows="4"
                             placeholder="Краткое описание, 10-200 символов"
                             value={brief}
                             onChange={handleChange}>
                 </textarea>
-                <textarea   name="content"
+                <textarea   id="content"
+                            name="content"
                             cols="100" 
                             rows="20"
                             placeholder="Основной контент, 150-2000 символов"
                             value={content}
                             onChange={handleChange}>
                 </textarea>
-                <input      type="submit" 
+                <input      type="submit"
+                            value="Отправить"
                             name="head"
                             disabled={disabled}>
                 </input>
