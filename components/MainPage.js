@@ -16,7 +16,7 @@ const MainPage = () => {
 
     const handleRemove = (value) => {
         localStorage.removeItem(value)
-        setData(data.filter(el => el.key !== value))
+        setData(localData)
         setArticle(null)
     }
 
