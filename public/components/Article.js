@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import "./Article.css"
 import HandleArticle from "./HandleArticle"
 import {validateComment} from "../actions/validate.js"
@@ -12,14 +12,20 @@ const Article = (props) => {
     const [author, setAuthor] = useState("")
     const [text, setText] = useState("")
 
+    //блокирует кнопку добавления комментария
+    useEffect(() => {
+        setDisabled(validateComment(author, text))
+    }, [text.length, author.length])
+
+    //добавляет данные из полей в состояние
     const handleChange = (e) => {
         const target = e.target
         const name = target.name
         name === "author" ? setAuthor(target.value) :
         setText(target.value)
-        setDisabled(validateComment(author, text))
     }
 
+    //отправляет комментарий в MainPage и очищает поля
     const handleSubmitComment = (e) => {
         e.preventDefault()
         const comment = {
@@ -33,6 +39,7 @@ const Article = (props) => {
         setText("")
     }
 
+    //удаляет комментарии
     const removeComment = (e) => {
         const target = e.target
         const value = target.value
