@@ -10,16 +10,20 @@ const MainPage = () => {
     const [article, setArticle] = useState(null)
     const [publicate, setPublicate] = useState(false)
 
+    //показывает отдельную статью полностью
     const showArticle = (key) => {
         setArticle(key)
     }
 
+    //удаляет статью
     const handleRemove = (value) => {
         localStorage.removeItem(value)
         setData(localData)
         setArticle(null)
     }
 
+    //обновляет существующую или добавляет новую статью в 
+    //зависимости от наличия editKey
     const handlePublicate = (head, brief, content, editKey, comments) => {
         const key = editKey ? editKey : Date.now()
         const post = {

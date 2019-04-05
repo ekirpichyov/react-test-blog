@@ -8,10 +8,12 @@ const ArticleList = (props) => {
     const [loadPostsCount, setLoadPostsCount] = useState(5)
     const [loadPostsData, setLoadPostsData] = useState(data.slice(0, loadPostsCount))
 
+    //обновляет список постов, при добавлении, удалении или подгрузке новых
     useEffect(() => {
         setLoadPostsData(data.slice(0, loadPostsCount))
     }, [data.length, loadPostsCount])
 
+    //подгружает новые посты
     const handleNext = () => {
         setLoadPostsCount(loadPostsCount + 5)
     }
