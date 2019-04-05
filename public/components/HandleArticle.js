@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import "./HandleArticle.css"
 import {validateArticle} from "../actions/validate.js"
 
@@ -10,16 +10,21 @@ const HandleArticle = (props) => {
     const [content, setContent] = useState(data.content || "")
     const [disabled, setDisabled] = useState(true)
 
+    //блокирует кнопку по результатам валидации
+    useEffect(() => {
+        setDisabled(validateArticle(head,brief,content))
+    }, [head.length, brief.length, content.length])
+
+    //добавляет в состояние данные из заполненных полей
     const handleChange = (e) => {
         const target = e.target
         const name = target.name
         name === "head" ? setHead(target.value) :
         name === "brief" ? setBrief(target.value) :
         setContent(target.value)
-        
-        setDisabled(validateArticle(head,brief,content))
     }
 
+    //отправляет в MainPage данные для публикации
     const handleSubmit = (e) => {
         e.preventDefault()
         props.publicate(head, brief, content, key, data.comments)
