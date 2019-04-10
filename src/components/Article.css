@@ -46,6 +46,7 @@ main .comments .comments-count {
   margin-bottom: 15px;
 }
 main .comments .comment {
+  position: relative;
   word-wrap: break-word;
   background: #ffffff;
   margin: 10px 0;
