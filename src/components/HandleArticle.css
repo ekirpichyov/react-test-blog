@@ -7,52 +7,130 @@
   background: rgba(0, 0, 0, 0.25);
 }
 .popup form {
-  position: relative;
   width: 900px;
-  height: 550px;
   margin: 65px auto;
-  background: #ffffff;
+  background: #F5F5F5;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 .popup form button {
+  font-size: 18px;
+  position: absolute;
+  bottom: -8px;
+  background: 0;
+  color: #01579B;
+  font-weight: 500;
+  height: 30px;
+}
+.popup form button:disabled {
+  color: #E0E0E0;
+}
+.popup form button:disabled:hover i {
+  transform: rotate(0deg) !important;
+  color: #E0E0E0;
+}
+.popup form button:first-of-type {
+  left: -20px;
+  bottom: -11px;
+}
+.popup form button:first-of-type i {
+  font-size: 36px !important;
+  color: #F5F5F5;
+}
+.popup form button:first-of-type i:before {
+  transition: all 0.3s;
+  background: #01579B;
+  top: -2px;
+  left: -2px;
+}
+.popup form button:first-of-type:hover i:before {
+  background: #0277BD;
+  transition: all 0.3s;
+}
+.popup form button:last-of-type {
+  right: -20px;
+}
+.popup form button:last-of-type:hover {
+  color: #0277BD;
+}
+.popup form button:last-of-type:hover i {
+  transform: rotate(180deg);
+  transition: all 0.25s linear;
+}
+.popup form button i {
+  font-size: 40px !important;
+  transform: rotate(0deg);
+  transition: all 0.25s linear;
+}
+.popup form button i:before {
+  content: "";
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
   height: 40px;
-  width: 120px;
-  font-size: 14px;
-  background: rgba(0, 0, 0, 0.15);
-  top: 20px;
-  left: 20px;
+  background: #F5F5F5;
 }
 .popup form textarea {
+  word-wrap: break-word;
+  background: #F5F5F5;
+  height: 21px;
   resize: none;
-  font-size: 14px;
-  border-radius: 5px;
+  font-size: 16px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   padding: 5px;
-  border: 1px solid #757575;
+  border-bottom: 2px solid #BDBDBD;
   display: block;
-  margin: 10px auto;
+  margin: 10px 0;
+  transition: all 0.3s;
 }
-.popup form textarea.error {
-  border: 1px solid #e53935;
+.popup form textarea:hover, .popup form textarea:hover:empty {
+  border-bottom: 2px solid #757575;
+  background: #E0E0E0;
+  transition: all 0.3s;
 }
-.popup form textarea.valid {
-  border: 1px solid #43A047;
+.popup form textarea:focus, .popup form textarea:focus:empty {
+  border-bottom: 2px solid #01579B;
+  background: #E0E0E0;
+  transition: all 0.3s;
+}
+.popup form textarea:last-of-type:focus {
+  height: 75px !important;
+}
+.popup form textarea:invalid {
+  border-bottom: 2px solid #b71c1c;
+}
+.popup form textarea:valid {
+  border-bottom: 2px solid #1B5E20;
+}
+.popup form textarea:empty {
+  border-bottom: 2px solid #BDBDBD;
 }
 .popup form textarea#head {
   height: 20px;
   width: 450px;
-  margin-bottom: 30px;
 }
 .popup form textarea#brief {
-  height: 70px;
+  height: 20px;
   width: 450px;
-  margin-bottom: 30px;
+  transition: all 0.3s;
+}
+.popup form textarea#brief:not(:empty), .popup form textarea#brief:focus {
+  width: 870px !important;
+  height: 60px !important;
+  transition: all 0.3s;
 }
 .popup form textarea#content {
-  height: 350px;
-  width: 870px;
-  margin-bottom: 30px;
+  height: 20px;
+  width: 450px;
+}
+.popup form textarea#content:not(:empty), .popup form textarea#content:focus {
+  width: 870px !important;
+  height: 380px !important;
+  transition: all 0.3s;
 }
 .popup form #head-error {
   position: absolute;

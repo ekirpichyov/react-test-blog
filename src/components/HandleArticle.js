@@ -31,27 +31,39 @@ const HandleArticle = (props) => {
         props.close()
     }
 
+    const handleKeyPress = (e) => {
+        return e.key === "Enter" ? e.preventDefault() : null
+    }
+
     return (
         <div className="popup">
-            <form onSubmit={handleSubmit}>
-                <button onClick={props.close}><i className="fas fa-arrow-left"></i> Назад</button>
+            <form>
+                <button onClick={props.close}><i className="material-icons">arrow_back</i></button>
                 <textarea   id="head"
+                            minLength="5"
+                            maxLength="50"
                             name="head"
                             cols="50" 
                             rows="1"
                             placeholder="Заголовок, 5-50 символов"
                             value={head}
-                            onChange={handleChange}>
+                            onChange={handleChange}
+                            onKeyPress={handleKeyPress}>
                 </textarea>
                 <textarea   id="brief"
+                            minLength="10"
+                            maxLength="200"
                             name="brief" 
-                            cols="50" 
-                            rows="4"
+                            cols="100" 
+                            rows="2"
                             placeholder="Краткое описание, 10-200 символов"
                             value={brief}
-                            onChange={handleChange}>
+                            onChange={handleChange}
+                            onKeyPress={handleKeyPress}>
                 </textarea>
                 <textarea   id="content"
+                            minLength="150"
+                            maxLength="2000"
                             name="content"
                             cols="100" 
                             rows="20"
@@ -59,12 +71,7 @@ const HandleArticle = (props) => {
                             value={content}
                             onChange={handleChange}>
                 </textarea>
-                <input      type="submit"
-                            value="Отправить"
-                            name="head"
-                            disabled={disabled}>
-                </input>
-
+                <button disabled={disabled} onClick={handleSubmit}><i className="material-icons">add_circle</i></button>
             </form>
         </div>
     )

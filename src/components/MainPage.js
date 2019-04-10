@@ -16,8 +16,8 @@ const MainPage = () => {
     }
 
     //удаляет статью
-    const handleRemove = (value) => {
-        localStorage.removeItem(value)
+    const handleRemove = (key) => {
+        localStorage.removeItem(key)
         setData(localData)
         setArticle(null)
     }
@@ -44,7 +44,7 @@ const MainPage = () => {
         <>
         <header>
             <div className="logo">БЛОГ</div>
-            <button onClick={()=>setPublicate(true)}><i className="fas fa-plus"></i> Написать</button>
+            {!publicate ? <button onClick={()=>setPublicate(true)}><i className="material-icons">add_circle</i></button> : null}
         </header>
         <main>
             {article !== null ? 
@@ -54,6 +54,7 @@ const MainPage = () => {
                     remover={handleRemove} 
                     data={JSON.parse(localStorage.getItem(article))}/> : 
                 <ArticleList   
+                    remover={handleRemove}  
                     selector={showArticle} 
                     data={data}/>}
             {publicate ?  

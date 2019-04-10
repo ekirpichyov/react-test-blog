@@ -1,20 +1,41 @@
-main {
-  position: relative;
-}
 main article.open {
+  padding: 10px 20px 20px 20px;
+  margin: -20px 0;
   height: 100%;
   border: 0;
+  position: relative;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 main article.open .head {
   font-size: 36px;
-  font-weight: 700;
-  color: #424242;
-  cursor: default;
-  margin: 20px 0;
+  font-weight: 500;
+  color: #212121;
+  margin: 10px 0;
 }
 main article.open .content {
   font-size: 16px;
   overflow: hidden;
+}
+main article.open button {
+  margin: 10px;
+  float: right;
+  background: transparent;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+main article.open button i {
+  font-size: 30px;
+  padding: 5px;
+}
+main article.open button.remove:hover {
+  color: #fff;
+  background: #f44336;
+  transition: all 0.3s;
+}
+main article.open button.edit:hover {
+  color: #fff;
+  background: #0277BD;
+  transition: all 0.3s;
 }
 main .comments {
   margin-top: 25px;
@@ -22,20 +43,31 @@ main .comments {
 }
 main .comments .comments-count {
   top: -25px;
+  margin-bottom: 15px;
 }
 main .comments .comment {
+  word-wrap: break-word;
   background: #ffffff;
   margin: 10px 0;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 main .comments .comment .remove-comment {
-  position: sticky;
-  float: right;
+  position: absolute;
+  background: #b71c1c;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+  border-radius: 4px;
   font-size: 10px;
   width: 20px;
   height: 20px;
+  transition: all 0.3s;
+}
+main .comments .comment .remove-comment:hover {
+  background: #f44336;
+  transition: all 0.3s;
 }
 main .comments .comment .author {
   color: #0D47A1;
@@ -44,44 +76,84 @@ main .comments .comment .content {
   padding-left: 15px;
 }
 main .comments #add-comment textarea {
+  word-wrap: break-word;
+  background: #F5F5F5;
+  height: 21px;
   resize: none;
-  font-size: 14px;
-  border-radius: 5px;
+  font-size: 16px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   padding: 5px;
-  border: 1px solid #BDBDBD;
+  border-bottom: 2px solid #BDBDBD;
   display: block;
-  margin: 10px 0;
+  margin: 20px 0;
+  transition: all 0.3s;
+}
+main .comments #add-comment textarea:hover, main .comments #add-comment textarea:empty:hover {
+  border-bottom: 2px solid #757575;
+  background: #E0E0E0;
+  transition: all 0.3s;
+}
+main .comments #add-comment textarea:focus, main .comments #add-comment textarea:empty:focus {
+  border-bottom: 2px solid #01579B;
+  background: #E0E0E0;
+  transition: all 0.3s;
+}
+main .comments #add-comment textarea:last-of-type:focus, main .comments #add-comment textarea:last-of-type:not(:empty) {
+  height: 75px;
+  transition: all 0.3s;
+}
+main .comments #add-comment textarea:invalid {
+  border-bottom: 2px solid #b71c1c;
+}
+main .comments #add-comment textarea:valid {
+  border-bottom: 2px solid #1B5E20;
+}
+main .comments #add-comment textarea:empty {
+  border-bottom: 2px solid #BDBDBD;
+}
+main .comments #add-comment label.error {
+  font-size: 12px;
+  color: #b71c1c;
+  position: relative;
+  top: -5px;
 }
 main .comments #add-comment input {
-  color: #ffffff;
-  width: 100px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  float: left;
+  width: 120px;
   height: 30px;
-  border-radius: 10px;
-  background: #4CAF50;
+  border-radius: 4px;
+  background: #01579B;
+  transition: all 0.3s;
+}
+main .comments #add-comment input:hover {
+  background: #0277BD;
+  transition: all 0.3s;
 }
 main .comments #add-comment input:disabled {
   background: #E0E0E0;
 }
-main button {
-  color: #ffffff;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 20px;
-  position: absolute;
-  background: #f44336;
-  top: -40px;
-  right: 0;
-}
-main button.close {
+
+.close {
+  position: fixed;
   left: 0;
-  background: #B0BEC5;
-  padding-top: 1px;
-  width: 100px;
+  top: 65px;
+  height: calc(100% - 65px);
+  background: transparent;
+  width: 50px;
+  color: #9E9E9E;
+  transition: all 0.3s;
 }
-main button.edit {
-  right: 40px;
-  background: #B0BEC5;
+.close i {
+  font-size: 36px;
+}
+.close:hover {
+  color: #212121;
+  background: #E0E0E0;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=Article.css.map */

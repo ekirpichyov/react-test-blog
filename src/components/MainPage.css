@@ -9,21 +9,20 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3) !important;
-}
-
 header {
   margin: 0;
   height: 65px;
   width: 100%;
-  border-bottom: 1px solid #BDBDBD;
+  background: #212121;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 header .logo {
+  margin-left: 25px;
+  color: #fff;
   float: left;
   font-family: "Courier New", Courier, monospace;
   vertical-align: middle;
@@ -31,49 +30,116 @@ header .logo {
   line-height: 65px;
 }
 header button {
-  color: #ffffff;
-  border-radius: 5px;
-  background: #B0BEC5;
-  font-size: 14px;
+  margin-top: 40px;
+  margin-right: 5%;
+  background: 0;
+  color: #01579B;
+  font-weight: 100;
   float: right;
   height: 30px;
-  width: 95px;
-  margin: 17px 0;
+}
+header button i {
+  font-size: 40px !important;
+  transform: rotate(0deg);
+  transition: all 0.25s linear;
+}
+header button i:before {
+  content: "";
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #F5F5F5;
+}
+header button:hover {
+  color: #0277BD;
+}
+header button:hover i {
+  transform: rotate(180deg);
+  transition: all 0.25s linear;
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 85px;
 }
 main article {
-  margin: 10px 0;
-  border-radius: 10px;
   background: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  border-radius: 4px;
   position: relative;
-  height: 150px;
-  border-bottom: 1px solid #BDBDBD;
 }
-main article .head {
-  font-size: 36px;
-  font-weight: 700;
-  color: #212121;
+main article:last-of-type {
+  margin-bottom: 40px;
+}
+main article .article-wrap {
+  height: calc(100% - 20px);
+  padding: 20px 10px;
   cursor: pointer;
-  margin: 20px 0;
+  background: #ffffff;
+  transition: all 0.3s;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
-main article .brief {
+main article .article-wrap:hover {
+  background: #E1F5FE;
+}
+main article .article-wrap:active {
+  background: #BBDEFB;
+}
+main article .article-wrap .head {
+  font-size: 36px;
+  font-weight: 500;
+  color: #212121;
+}
+main article .article-wrap .brief {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.54);
   font-size: 20px;
-  margin-bottom: 20px;
 }
-main article .comments-count {
+main article .article-wrap .comments-count {
   position: absolute;
-  color: blue;
-  font-size: 15px;
+  color: #01579B;
+  font-size: 20px;
   top: 15px;
   right: 20px;
+  font-weight: 500;
+  line-height: 24px;
 }
-main article .remove {
-  cursor: pointer;
+main article .article-wrap .comments-count i {
+  position: relative;
+  top: 5px;
+}
+
+.spinner {
+  margin: 40px auto;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #01579B;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=MainPage.css.map */
