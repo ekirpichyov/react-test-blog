@@ -15,6 +15,18 @@ const HandleArticle = (props) => {
         setDisabled(validateArticle(head,brief,content))
     }, [head.length, brief.length, content.length])
 
+    useEffect(() => {
+        function keyListener(e) {
+            if (e.keyCode === 27) {
+              props.close();
+            }
+        }
+
+        document.addEventListener("keydown", keyListener);
+
+        return () => document.removeEventListener("keydown", keyListener);
+    })
+
     //добавляет в состояние данные из заполненных полей
     const handleChange = (e) => {
         const target = e.target
