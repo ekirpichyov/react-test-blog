@@ -1,3 +1,3 @@
-https://ekirpichyov.github.io/react-test-blog/
+https://kyvg.github.io/react-test-blog/
 
 Test CRUD-interface
